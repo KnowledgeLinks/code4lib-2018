@@ -1,35 +1,206 @@
 {% extends 'base.html' %}
 
+{% block more_css %}
+<style>
+</style>
+{% endblock %}
+
 {% block main %}
-<img src="{{ url_for('static', filename='img/bibcat-logo.png') }}">
-<img src="{{ url_for('static', filename='img/kl-logo.png') }}">
-<hr class="slide-nav">
-<h1>Transforming MARC and Metadata into RDF-based Applications</h1>
+<div class="uk-align-right" >
+    <div class="uk-sticky">
+        <img src="{{ url_for('static', filename='img/bibcat-kl-logos.png') }}">
+    </div>
+</div>
+<img src="{{ url_for('static', filename='img/line.png') }}">
+<h1 class="uk-heading-primary">
+    Transforming MARC and Metadata into RDF-based Applications
+</h1>
 <h2>Tuesday,Tuesday, February 13, 2018 - 9:30 to 12:30</h2>
 <p>Jeremy Nelson  and Mike Stabile</p>
 
 <h2>Agenda</h2>
-<div class="uk-row">
-    <div class="uk-col">
-    <h4 class="text-danger">Tuesday, February 13, 2018</h4>
-    <p>9:30 -  Welcome and Overview</p>
-    <p>10:00 -  Computer setup</p>
-    <p>10:20 -  Break</p>
-    <p>10:30 -  BIBCAT Introduction</p>
-    <p>11:20 -  Break</p>
-    <p>11:30 -  Next Steps, Questions and Comments</p>
-    <p>12:30 -  End Session</p>
+<div uk-grid>
+    <div class="uk-width-1-2">
+    <h4 class="uk-text-danger">Tuesday, February 13, 2018</h4>
+    <p class="uk-text-muted">&nbsp;9:30 -  Welcome and Overview<br/>
+    10:00 -  Computer setup<br/>
+    10:20 -  Break<br/>
+    10:30 -  BIBCAT Introduction<br/>
+    11:20 -  Break<br/>
+    11:30 -  Next Steps, Questions and Comments<br/>
+    12:30 -  End Session</p>
 
     </div>
-    <div class="uk-col">
-    <h4>Resources</h4>
+    <div class="uk-width-1-2">
+    <h4 class="uk-text-danger">Resources</h4>
     <ul>
         <li><a href="https://bibcat.org/">BIBCAT Home</a></li>
         <li><a href="https://bibcat.org/introduction">Introduction to BIBCAT</a></li>
         <li><a href="http://knowledgelinks.io/">KnowledgeLinks.io</a></li>
-    
     </ul>
 
+    </div>
+</div>
+<hr>
+<div style="background-color: rgb(41, 134,195); height: 500px" 
+     class="uk-width-1-1">
+        <h1 class="uk-heading-inverse uk-text-center" 
+            style="padding-top: 3em; color: white; font-size: 5em">Overview</h1>
+    </div>
+</div>
+<img src="{{ url_for('static', filename='img/line-2.png') }}">
+<hr>
+<h1 class="uk-heading-primary">RDF Applications Technologies</h1>
+<div class="uk-grid-small uk-child-width-expand@s" uk-grid>
+    <div>
+        
+        <img src="{{ url_for('static', filename='img/rdf.png') }}">
+        <h3 class="text-muted">Data Formats</h3>
+        <ul>
+            <li>RDF - Triples (XML, Turtle, N3 serializations</li>
+            <li>MODS, MARC, Dublin Core, XML format</li>
+            <li>CSV - Comma Separated Value</li>
+            <li>JSON - Feeds both incoming and outgoing</li>
+        </uL>
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename='img/databases.png') }}">
+        <h3 class="text-muted">Datastores</h3>
+        <ul>
+Triplestore - Stores RDF
+SQL DBs - Relational table structures
+Repositories - Store digital objects
+NOSQL- various types
+Filesystems - Store digital files
+        </ul>
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename='img/query-lang.png') }}">
+        <ul>
+SPARQL - for RDF 
+SQL - for SQL DBs
+XPath for XML document processing
+DSL - an example of a NOSQL query language (Elasticsearch)
+        </ul>
+    </div>
+</div>
+<div class="uk-grid-small uk-child-width-expand@s" uk-grid>
+    <div>
+        <img src="{{ url_for('static', filename='img/python.png') }}">
+        <h3 class="text-muted">Python Modules</h3>
+Flask - Build HTML5 Applications using <a href="https://getbootstrap.com">Bootstrap</a>,
+<a href="https://jquery.com/">JQuery</a>
+RDFLib
+LXML
+Pymarc
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename='img/blazegraph-elasticsearch.png') }}">
+        <h3 class="text-muted">Enterprise Tools</h3>
+        <ul>
+Triplestore - Blazegraph, rdflib
+SQL DBs - Not using
+Repository - Fedora 4
+NOSQL - Elasticsearch
+Filesystem - Linux and windows
+
+        </ul>
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename='img/github-docker.png') }}">
+        <h3 class="text-muted">Source Control, Packaging, and Deployment</h3>
+        <ul>
+        Git and Github,
+        PyPi,
+        Docker
+        </ul>
+    </div>
+</div> 
+<hr>
+<h1 class="uk-heading-primary">Our Approach</h1>
+<img src="{{ url_for('static', filename='img/workflow.png') }}">
+<div class="uk-grid-small uk-child-width-expand@s" uk-grid>
+    <div>
+MARC,  MODS XML, CSV, JSON feeds, and SPARQL endpoints
+
+
+
+BIBCAT
+RML
+
+    </div>
+    <div>
+Simplification
+Normalization
+Standardization
+Mappings 
+Indexing/Search
+
+BIBCAT
+RML
+RDFFRAMEWORK
+
+    </div>
+    <div>
+Multiple Formats
+Search Engine RDF
+Service Hubs
+WEB UI
+
+
+BIBCAT Publisher
+RDFFRAMEWORK
+
+    </div>
+
+</div>
+<hr>
+<div style="background-color: rgb(41, 134,195); height: 500px" 
+     class="uk-width-1-1">
+        <h1 class="uk-heading-inverse uk-text-center" 
+            style="padding-top: 3em; color: white; font-size: 5em">BIBCAT Introduction</h1>
+    </div>
+</div>
+<img src="{{ url_for('static', filename='img/line-2.png') }}">
+<hr>
+<h1><a href="https://bibcat.org/introduction/">https://bibcat.org/introduction/</a></h1>
+<div style="background-color: rgb(41, 134,195); height: 500px" 
+     class="uk-width-1-1">
+        <h1 class="uk-heading-inverse uk-text-center" 
+            style="padding-top: 3em; color: white; font-size: 5em">Next Steps, Questions, &amp;
+            Comments</h1>
+    </div>
+</div>
+<img src="{{ url_for('static', filename='img/line-2.png') }}">
+<hr>
+<h1 class="uk-heading-primary">RDF Applications</h1>
+<h2 class="uk-text-muted">Building semantic solutions for knowledge organizations</h2>
+<img src="{{  url_for('static', filename='img/rdfframework-data-flow.png') }}">
+<h1 class="uk-heading-primary">RdfFramework for Managing Linked Data</h1>
+<h2>Configuration validation and access</h2>
+<h3>RdfConfigManager</h3>
+Database Connection Management
+* ConnManager
+Data file Management
+*DataManager and DefManager
+RDF Vocabulary Class Generation
+* Class inheritance
+*augmentation
+<hr>
+
+<div style="background-color: rgb(41, 134,195); height: 500px" 
+     class="uk-width-1-1">
+        <h1 class="uk-heading-hero" style="color: rgb(129,207,251)">Thanks!</h1>
+        <h1 class="uk-heading-inverse uk-text-center" 
+            style="padding-top: 3em; color: white; font-size: 5em">Questions, &amp;
+            Comments</h1>
+        <p class="uk-text-lead">
+        knowledgelinks.io@gmail.com
+
+        +1-719-301-7017
+
+        http://knowledgelinks.io/
+        </p>
     </div>
 </div>
 {% endblock %}
